@@ -1,0 +1,15 @@
+{
+  "name": "septa-fare-calculator",
+  "version": "1.0.0",
+  "description": "calculates septa fares by zone",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "trev",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  }
+}

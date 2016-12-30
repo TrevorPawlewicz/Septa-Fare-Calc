@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>SEPTA Regional Rail Fare Calculator</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/calculator.css">
+		<link rel="stylesheet" type="text/css" href="/css/map.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+	</head>
+
+	<body>
+		<div class="container-fluid">
+		<!-- <div class="jumbotron"> -->
+
+
+			<div class="container">
+				<div class="jumbotron header gradient">
+					<img class="septa-logo" src="/images/SEPTA_logo.png"/>
+					<h2>Regional Rail Fares</h2>
+				</div>
+			</div>
+
+
+
+			<div class="container">
+				<div class="row">
+
+
+
+					<div class="map col-md-6 col-sm-6"> <!-- ___MAP___ -->
+				        <div id="googleMap"></div>
+
+			            <form class="form-horizontal">
+			                <div class="form-group">
+			                    <label for="start" class="col-xs-2 control-label">Start:</label>
+			                    <div class="col-xs-10">
+			                        <input type="text" id="start" class="form-control" placeholder="Origin">
+			                    </div>
+			                </div>
+
+			                <div class="form-group">
+			                    <label for="end" class="col-xs-2 control-label">End:</label>
+			                    <div class="col-xs-10">
+			                        <input type="text" id="end" class="form-control" placeholder="Destination">
+			                    </div>
+			                </div>
+			            </form>
+
+			            <div>
+			                <button id="calcBtn" class="btn btn-info" onClick="calcRoute();">Calculate</button>
+			            </div>
+
+						<div id="output"></div>
+
+			        </div> <!-- ___end MAP___ -->
+
+
+
+
+
+
+					<div id="calculator" class="gradientRWB col-md-6 col-sm-6">
+
+						<form>
+							<fieldset class="form-group" id="faresForm">
+								<h4>Where are you going?</h4>
+								<select class="form-control" id="whereGo"></select>
+							</fieldset>
+
+							<fieldset class="form-group">
+								<h4>When are you riding?</h4>
+								<select class="form-control" id="whenGo"></select>
+							</fieldset>
+
+
+							<fieldset class="form-group">
+								<div class="radio">
+									<h4>Where will you purchase the fare?</h4>
+									<label>
+										<input type="radio" name="optionsRadios" id="advancedFare" value="advancedFare" checked>
+										Station Kiosk
+									</label>
+								</div>
+
+								<div class="radio">
+									<label>
+										<input type="radio" name="optionsRadios" id="onboardFare" value="onboardFare">
+										Onboard
+									</label>
+								</div>
+							</fieldset>
+
+							<fieldset class="form-group">
+								<h4>How many rides will you need?</h4>
+			    				<input class="form-control" type="number" id="ticketNum" min="1" step="1" max="10"
+									placeholder="1" data-bind="value:ticketNum"/>
+							</fieldset>
+
+							<div class="button">
+								<button type="submit" id="submitButton"
+										class="btn btn-primary center-block btn-lg">Submit
+								</button>
+							</div>
+						</form>
+
+						<div class="display">
+							<p id="zoneDisplay">...</p>
+							<p id="infoDisplay">...</p>
+						</div>
+
+						<div class="output gradient">
+							<h4>Your fare will cost:</h4>
+							<p id="resultP">...</p>
+							<p id="statusP">...</p>
+						</div>
+
+					</div> <!-- ___end calculator___ -->
+
+				</div> <!-- end row -->
+			</div> <!-- end container -->
+
+		</div> <!-- end container-fluid -->
+
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwJ 2Vepe9L2Miuh7QH87SR_RItIXHlX6Q&libraries=places"></script>
+		<script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="/js/script.js"></script>
+		<script type="text/javascript" src="/js/map.js"></script>
+	</body>
+</html>
